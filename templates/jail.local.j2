@@ -1,5 +1,5 @@
 # {{ ansible_managed }}
 [DEFAULT]
-{% for key, value in fail2ban_default_jail_config.iteritems() %}
+{% for key, value in fail2ban_default_jail_config.items()|list %}
 {{ key | lower }} = {{ value | lower }}
 {% endfor %}

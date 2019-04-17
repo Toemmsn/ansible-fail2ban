@@ -1,5 +1,5 @@
 #{{ ansible_managed }}
 [{{ item.key | lower }}]
-{% for jail_key, jail_value in item.value.iteritems() %}
+{% for jail_key, jail_value in item.value.items()|list %}
 {{ jail_key | lower }} = {{ jail_value | lower }}
 {% endfor %}
